@@ -236,6 +236,6 @@ class DIDParser(private val input: String) {
 }
 
 fun main(){
-      val did = DIDParser("did:ethipfs:0x0f7773CE819dFDF650a6b646E8d34aF63d5E40C4:ETF-Beograd-BU/b/h/a?id=10&test=true#key-one").parse()
-        System.out.println(did.didString)
+    val did = DIDParser("did:ethipfs:0x0f7773CE819dFDF650a6b646E8d34aF63d5E40C4:ETF-Beograd-BU/b/h/a?id=10&test=true#key-one").parse()
+    System.out.println(did.didString)
 }

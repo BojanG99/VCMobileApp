@@ -37,18 +37,21 @@ class ResolveQRCodeScanActivity : ComponentActivity() {
         }
 
         val qrCodeData = intent.getStringExtra("QR_CODE_DATA")
-        val gson = Gson()
-        val type = object : TypeToken<Map<String, String>>() {}.type
+        val type = intent.getStringExtra("requestType")//object : TypeToken<Map<String, String>>() {}.type
 
-        val resultMap: Map<String, String> = gson.fromJson(qrCodeData, type)
-        when(resultMap["type"]){
+
+        when(type){
             "issue" -> {
                 val intent = Intent(this, IssueVerifiableCredentialActivity::class.java)
                 intent.putExtra("QR_CODE_DATA", qrCodeData)
                 startActivity(intent)
+                finish()
             }
             "verify" -> {
-
+                val intent = Intent(this, VerifyVerifiableCredentialActivity::class.java)
+                intent.putExtra("QR_CODE_DATA", qrCodeData)
+                startActivity(intent)
+                finish()
             }
         }
 

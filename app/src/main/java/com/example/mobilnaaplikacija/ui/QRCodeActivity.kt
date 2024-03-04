@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
@@ -15,6 +16,7 @@ import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.example.mobilnaaplikacija.R
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
@@ -55,12 +57,13 @@ class QRCodeActivity : ComponentActivity() {
                         Toast.makeText(this, "Invalid QR code", Toast.LENGTH_SHORT).show()
                     }
                     else{
+
                         Toast.makeText(this, resultMap["type"], Toast.LENGTH_SHORT).show()
                        // val intent = Intent(this, ResolveQRCodeScanActivity::class.java)
-                        val intent = Intent(this, FileUploadActivity::class.java)
+                        val intent = Intent(this, ResolveQRCodeScanActivity::class.java)
                         intent.putExtra("QR_CODE_DATA", it.text)
+                        intent.putExtra("requestType",resultMap["type"])
                         startActivity(intent)
-
                         finish();
                     }
                 }

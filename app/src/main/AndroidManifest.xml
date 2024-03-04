@@ -25,6 +25,27 @@
         android:theme="@style/Theme.MobilnaAplikacija"
         tools:targetApi="31">
         <activity
+            android:name=".ui.VerifyVerifiableCredentialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.VerifiableCredentialHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.VerifiableCredentialPresentationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MobilnaAplikacija" />
+        <activity
+            android:name=".ui.LogginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MobilnaAplikacija" />
+        <activity
+            android:name=".ui.MainMenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BottomNavigation" />
+        <activity
             android:name=".ui.TestActivity"
             android:exported="false" />
         <activity
@@ -45,8 +66,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MobilnaAplikacija">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

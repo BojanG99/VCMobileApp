@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mobilnaaplikacija"
-        minSdk 24
+        minSdk 26
         //noinspection EditedTargetSdkVersion
         targetSdk 34
         versionCode 1
@@ -39,6 +39,7 @@ android {
     }
     buildFeatures {
         compose true
+        viewBinding true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.5.1'
